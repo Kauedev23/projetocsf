@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="css/styles login.css">
+</head>
+<body>
+    <div class="login-container">
+        <form id="login-form" class="login-form" onsubmit="return verificarLogin()">
+            <h2>GESTÃO DE ESTOQUE <br> CSF - VERZANI</h2>
+            <p>Entre com a sua conta para continuar!</p> <br><br>
+            <div class="input-container">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+            </div>
+            <button type="submit">Entrar</button> <br><br>
+            <p>Problemas ao entrar? Contate o <a href="https://wa.me/5511973932554">Suporte</a></p> 
+        </form>
+    </div>
+
+    <!-- Adicionando o script JS diretamente no HTML -->
+    <script>
+        function verificarLogin() {
+            // Obtém os valores dos campos de usuário e senha
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verifica as credenciais
+            if (username === "copacsf" && password === "copa123") {
+                // Redireciona para "copa.html"
+                window.location.href = "copa.html";
+                return false; // Impede o envio do formulário padrão
+            } else if (username === "limpezacsf" && password === "limpeza123") {
+                // Redireciona para "limpeza.html"
+                window.location.href = "limpeza.html";
+                return false; // Impede o envio do formulário padrão
+            } else {
+                // Alerta de erro para credenciais inválidas
+                alert("Usuário ou senha incorretos!");
+                return false; // Impede o envio do formulário
+            }
+        }
+    </script>
+</body>
+</html>
